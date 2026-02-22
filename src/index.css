@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Wedding Invitation Design System - Purple Lavender Floral Theme */
+
+@layer base {
+  :root {
+    /* Soft Ivory/Cream Background */
+    --background: 60 30% 96%;
+    --foreground: 270 30% 20%;
+
+    /* Light Lavender Card */
+    --card: 270 30% 97%;
+    --card-foreground: 270 30% 20%;
+
+    --popover: 60 30% 96%;
+    --popover-foreground: 270 30% 20%;
+
+    /* Deep Purple Primary */
+    --primary: 270 45% 45%;
+    --primary-foreground: 60 30% 98%;
+
+    /* Soft Lavender Secondary */
+    --secondary: 270 40% 90%;
+    --secondary-foreground: 270 45% 35%;
+
+    /* Muted Lavender */
+    --muted: 270 20% 92%;
+    --muted-foreground: 270 15% 45%;
+
+    /* Olive Green Accent (from leaves) */
+    --accent: 85 30% 40%;
+    --accent-foreground: 60 30% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 20% 88%;
+    --input: 270 20% 90%;
+    --ring: 270 45% 45%;
+
+    --radius: 0.5rem;
+
+    /* Custom Wedding Colors */
+    --lavender: 270 50% 70%;
+    --lavender-light: 270 40% 92%;
+    --lavender-dark: 270 50% 50%;
+    --purple-deep: 270 45% 35%;
+    --olive: 85 30% 45%;
+    --olive-light: 85 25% 75%;
+    --ivory: 60 35% 96%;
+    --cream: 45 40% 94%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .text-gradient-purple {
+    background: linear-gradient(135deg, hsl(270 50% 50%), hsl(270 45% 65%), hsl(270 50% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(270 50% 50%), hsl(270 45% 65%), hsl(270 50% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-ornament {
+    border-image: linear-gradient(90deg, transparent, hsl(var(--lavender)), transparent) 1;
+  }
+
+  .bg-floral-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(var(--lavender-light) / 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--olive-light) / 0.25) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(var(--lavender) / 0.15) 0%, transparent 40%);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-20px) rotate(-2deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
